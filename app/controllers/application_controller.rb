@@ -45,7 +45,8 @@ class ApplicationController < Sinatra::Base
     if @withdraw <= @old_balance
       @user.update(balance: @old_balance - @withdraw)
     else
-      
+      redirect '/account'
+    end
   end
   
   get "/login" do
