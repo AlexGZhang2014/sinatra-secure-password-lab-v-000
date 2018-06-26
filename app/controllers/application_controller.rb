@@ -34,12 +34,8 @@ class ApplicationController < Sinatra::Base
     @user = User.find(session[:user_id])
     @old_balance = @user.balance.to_f
     @deposit = params[:deposit].to_f
-    if @deposit > 0
-      @user.update(balance: @old_balance + @deposit)
+    @user.update(balance: @old_balance + @deposit)
       redirect '/account'
-    else
-      redirect '/account'
-    end
   end
   
   post '/withdraw' do
