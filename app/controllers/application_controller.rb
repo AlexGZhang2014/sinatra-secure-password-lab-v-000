@@ -41,6 +41,8 @@ class ApplicationController < Sinatra::Base
   post '/withdraw' do
     @user = User.find(session[:user_id])
     @old_balance = @user.balance.to_f
+    @withdraw = params[:withdraw].to_f
+    
   end
   
   get "/login" do
