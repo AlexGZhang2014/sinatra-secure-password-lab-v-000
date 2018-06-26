@@ -38,7 +38,6 @@ class ApplicationController < Sinatra::Base
       @user.update(balance: @old_balance + @deposit)
       redirect '/account'
     else
-      @status = "unsuccessful"
       redirect '/account'
     end
   end
