@@ -34,7 +34,7 @@ class ApplicationController < Sinatra::Base
     @user = User.find(session[:user_id])
     @old_balance = @user.balance.to_f
     @deposit = params[:deposit].to_f
-    @user.update(balance: )
+    @user.update(balance: @old_balance + @deposit)
   end
   
   get "/login" do
