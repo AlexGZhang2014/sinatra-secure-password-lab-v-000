@@ -35,6 +35,7 @@ class ApplicationController < Sinatra::Base
     @old_balance = @user.balance.to_f
     @deposit = params[:deposit].to_f
     @user.update(balance: @old_balance + @deposit)
+    redirect '/account'
   end
   
   get "/login" do
