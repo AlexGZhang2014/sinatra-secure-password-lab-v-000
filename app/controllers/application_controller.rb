@@ -38,6 +38,11 @@ class ApplicationController < Sinatra::Base
     redirect '/account'
   end
   
+  post '/withdraw' do
+    @user = User.find(session[:user_id])
+    @old_balance = @user.balance.to_f
+  end
+  
   get "/login" do
     erb :login
   end
