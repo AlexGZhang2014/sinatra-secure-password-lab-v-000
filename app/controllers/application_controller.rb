@@ -43,9 +43,11 @@ class ApplicationController < Sinatra::Base
     @old_balance = @user.balance.to_f
     @withdraw = params[:withdraw].to_f
     if @withdraw <= @old_balance
+      @status = true
       @user.update(balance: @old_balance - @withdraw)
       redirect '/account'
     else
+      @status = false
       redirect '/account'
     end
   end
