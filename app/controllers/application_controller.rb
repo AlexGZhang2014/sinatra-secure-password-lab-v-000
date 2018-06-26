@@ -46,7 +46,6 @@ class ApplicationController < Sinatra::Base
       @user.update(balance: @old_balance - @withdraw)
       redirect '/account'
     else
-      @status = false
       redirect '/account'
     end
   end
