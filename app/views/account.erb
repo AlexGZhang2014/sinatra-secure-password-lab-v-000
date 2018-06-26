@@ -9,7 +9,7 @@
 
 <h3>To make a deposit or a withdrawal, please enter your amount in the appropriate field below.</h3>
 
-<% if @status == "unsuccessful" %>
+<% if @status == false%>
   <h1>You CANNOT withdraw more than your current balance! Please try again.</h1>
 <% end %>
 
