@@ -13,7 +13,7 @@
   <h1>You did not enter an amount to deposit. Please try again.</h1>
 <% end %>
 
-<% if @status = "unsuccessful withdraw" %>
+<% if @status == "unsuccessful withdraw" %>
   <h1>You CANNOT withdraw more than your current balance! Please try again.</h1>
 <% end %>
 
