@@ -41,6 +41,7 @@ class ApplicationController < Sinatra::Base
     else
       @status = "unsuccessful deposit"
       redirect '/account'
+    end
   end
   
   post '/withdraw' do
