@@ -42,7 +42,10 @@ class ApplicationController < Sinatra::Base
     @user = User.find(session[:user_id])
     @old_balance = @user.balance.to_f
     @withdraw = params[:withdraw].to_f
-    
+    if @withdraw <= @old_balance
+      @user.update(balance: @old_balance - @withdraw)
+    else
+      
   end
   
   get "/login" do
